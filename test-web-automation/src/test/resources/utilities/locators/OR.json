@@ -1,13 +1,13 @@
 {
-"Your Amazon":"id=nav-your-amazon", 
-"MobileNumber":"id=fullnameFromPopUp",
-"Password":"id=password",
+"SearchBox":"id=twotabsearchtextbox", 
+"Shop By Department":"id=nav-link-shopall",
+"FirstProduct":"xpath=//img[@alt='Product Details'])[1]",
 "SignIn":"class=signInButton",
 "Login":"name=submit",
 "LoginOTP":"id=mobileOtpBox",
 "forgotLink":"id=auth-fpp-link-bottom",
-"css_locator":"css",
-"xpath_locator":"XPATH=//*[@id='link-signup']/a",
+"searchContinue":"css=input.nav-input",
+"search":"XPATH=//*[@id='nav-search']/form/div[2]/div/input",
 "Country":"class=language-select"
 
 }

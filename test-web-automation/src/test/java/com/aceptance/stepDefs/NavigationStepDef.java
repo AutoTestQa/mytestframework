@@ -31,11 +31,18 @@ public class NavigationStepDef extends BaseGeneric {
             driver.get(CONFIG.getProperty("appURL"));
     }
     
+    @Given("^I wait for (.*) seconds$")
+    public void i_wait_for_seconds(String waitSeconds)
+            throws InterruptedException, IOException {
+            String waitTime=waitSeconds+"000";
+            Thread.sleep(Long.valueOf(waitTime));
+    }
+    
     @When("^I choose to click on (.*)$")
     public void I_click_on_choosedElement(
             String element) {
         element = element.replace("\"", "");   
-        try{
+        try{      
             locatorFind.getWebelement(driver, element).click();    
         }catch (Exception e) {
             System.out.println("Object "+"'"+element+"'"+ " not exit/avaialble on application  "+ e.getMessage());
