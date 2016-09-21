@@ -1,0 +1,13 @@
+{
+"Your Amazon":"id=nav-your-amazon", 
+"MobileNumber":"id=fullnameFromPopUp",
+"Password":"id=password",
+"SignIn":"class=signInButton",
+"Login":"name=submit",
+"LoginOTP":"id=mobileOtpBox",
+"forgotLink":"id=auth-fpp-link-bottom",
+"css_locator":"css",
+"xpath_locator":"XPATH=//*[@id='link-signup']/a",
+"Country":"class=language-select"
+
+}
