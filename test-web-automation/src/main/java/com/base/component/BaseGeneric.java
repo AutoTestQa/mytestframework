@@ -12,23 +12,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseGeneric {
 
-    public static WebDriver driver=null;
-    public static Properties CONFIG=null;
-    public static Properties OR=null;
+    public static WebDriver driver = null;
+    public static Properties CONFIG = null;
+    public static Properties OR = null;
     static String driverPath = "D:\\Selenium\\EXE\\chromedriver_win32\\";
-    
-    private void setDriver(
-            String browserType) {
+
+    private void setDriver(String browserType) {
         switch (browserType) {
-        case "chrome":
-            driver = initChromeDriver();
-            break;
-        case "firefox":
-            driver = initFirefoxDriver();
-            break;
-        default:
-            System.out.println("browser : " + browserType + " is invalid, Launching Firefox as browser of choice..");
-            driver = initFirefoxDriver();
+            case "chrome":
+                driver = initChromeDriver();
+                break;
+            case "firefox":
+                driver = initFirefoxDriver();
+                break;
+            default:
+                System.out.println("browser : " + browserType + " is invalid, Launching Firefox as browser of choice..");
+                driver = initFirefoxDriver();
         }
     }
 
@@ -50,18 +49,17 @@ public class BaseGeneric {
 
     @Before
     public void initializeTestBaseSetup() throws IOException {
-        
-        CONFIG = new Properties();
-        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\utilities\\config.properties");
-        CONFIG.load(objfile);
-        
-//        OR = new Properties();
-//        objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\utilities\\config.properties");
-//        OR.load(objfile);
-   
-       setDriver(CONFIG.getProperty("browserType"));
 
-       
+        CONFIG = new Properties();
+        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\utilities\\config.properties");
+        CONFIG.load(objfile);
+
+        //        OR = new Properties();
+        //        objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\utilities\\config.properties");
+        //        OR.load(objfile);
+
+        setDriver(CONFIG.getProperty("browserType"));
+
     }
 
 }

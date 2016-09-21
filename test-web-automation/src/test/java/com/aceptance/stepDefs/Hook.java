@@ -7,20 +7,18 @@ import com.base.component.BaseGeneric;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-
 public class Hook extends BaseGeneric {
-    
-    
+
     @Before
-    public void invokeApplication() throws InterruptedException, IOException{
-        
+    public void invokeApplication() throws InterruptedException, IOException {
+
         initializeTestBaseSetup();
     }
-    
+
     @After
-    public void closeApplication() throws InterruptedException, IOException{
-        
+    public void closeApplication() throws InterruptedException, IOException {
+
         driver.quit();
     }
-    
+
 }
