@@ -1,5 +1,7 @@
 package com.aceptance.stepDefs;
 
+import org.openqa.selenium.WebElement;
+
 import com.base.component.BaseGeneric;
 import com.base.component.LocatorFind;
 
@@ -16,8 +18,11 @@ public class UserInputStepDef extends BaseGeneric {
     public void I_enter_value_into_element(String value, String element){
     element = element.replace("\"", "");
     value = value.replace("\"", "");
-    try{
-        locatorFind.getWebelement(driver, element).sendKeys(value);
+    try{ 
+        WebElement elementToAction=locatorFind.getWebelement(driver, element);
+        elementToAction.click();
+        elementToAction.clear();
+        elementToAction.sendKeys(value);
     }catch (Exception e) {
         System.out.println("Object "+"'"+element+"'"+ " not exit/avaialble on application  "+ e.getMessage());
         e.printStackTrace();
