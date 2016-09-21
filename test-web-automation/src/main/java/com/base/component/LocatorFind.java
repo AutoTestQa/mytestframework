@@ -44,7 +44,7 @@ public class LocatorFind {
 
         if (locator != null) {
 
-            String[] refinelocator = locator.split("=");
+            String[] refinelocator = locator.split("==");
             String finalLocator = refinelocator[1];
 
             By locator_strategy;
