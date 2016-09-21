@@ -1,13 +1,13 @@
 {
-"SearchBox":"id=twotabsearchtextbox", 
-"Shop By Department":"id=nav-link-shopall",
-"FirstProduct":"xpath=//img[@alt='Product Details'])[1]",
-"SignIn":"class=signInButton",
-"Login":"name=submit",
-"LoginOTP":"id=mobileOtpBox",
-"forgotLink":"id=auth-fpp-link-bottom",
-"searchContinue":"css=input.nav-input",
-"search":"XPATH=//*[@id='nav-search']/form/div[2]/div/input",
-"Country":"class=language-select"
+"SearchBox":"id==twotabsearchtextbox", 
+"Shop By Department":"id==nav-link-shopall",
+"FirstProduct":"xpath=//*[@id==//li[@id='result_0']/div/div[3]/div/a/h2",
+"Select Quantity":"id==quantity",
+"SizeDropdown":"id==native_dropdown_selected_size_name",
+"SizeMedium":"id==native_size_name_1",
+"Add To Bag":"id==add-to-cart-button",
+"searchContinue":"css==input.nav-input",
+"search":"XPATH==//*[@id='nav-search']/form/div[2]/div/input",
+"Country":"class==language-select"
 
 }

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseGeneric {
@@ -34,7 +35,10 @@ public class BaseGeneric {
     private static WebDriver initChromeDriver() {
         System.out.println("Launching google chrome with new profile..");
         System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-extensions");
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         return driver;

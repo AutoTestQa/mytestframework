@@ -2,6 +2,8 @@ package com.aceptance.stepDefs;
 
 import java.io.IOException;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.support.ui.Select;
 
 import com.base.component.BaseGeneric;
@@ -26,6 +28,7 @@ public class NavigationStepDef extends BaseGeneric {
     @Given("^I Navigate to customer application$")
     public void i_Navigate_to_customer_application() throws InterruptedException, IOException {
         driver.get(CONFIG.getProperty("appURL"));
+        driver.manage().deleteAllCookies();
     }
 
     @Given("^I wait for (.*) seconds$")
@@ -41,7 +44,7 @@ public class NavigationStepDef extends BaseGeneric {
             locatorFind.getWebelement(driver, element).click();
         } catch (Exception e) {
             System.out.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
-            //e.printStackTrace();
+            Assert.assertFalse(true);
         }
     }
 
