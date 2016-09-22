@@ -16,7 +16,7 @@ public class BaseGeneric {
     public static WebDriver driver = null;
     public static Properties CONFIG = null;
     public static Properties OR = null;
-    static String driverPath = "D:\\Selenium\\EXE\\chromedriver_win32\\";
+    static String driverPath = "D:\\Ravi\\chromedriver\\";
 
     private void setDriver(String browserType) {
         switch (browserType) {
