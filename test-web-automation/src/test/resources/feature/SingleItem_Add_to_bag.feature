@@ -11,4 +11,3 @@ Feature: Item Add to bag
     And I choose to click on "SizeMedium"
     And I choose to select "3" as a Visible Text from "Select Quantity" dropdown
     And I choose to click on "Add To Bag"
-   
