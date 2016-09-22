@@ -12,7 +12,7 @@ Feature: Item Add to bag
     And I choose to select "3" as a Visible Text from "Select Quantity" dropdown
     And I choose to click on "Add To Bag"
 
-    Examples:
-    |product |
-    |t-shirt   |
-    |pents|
+    Examples: 
+      | product |
+      | t-shirt |
+      | pents   |
