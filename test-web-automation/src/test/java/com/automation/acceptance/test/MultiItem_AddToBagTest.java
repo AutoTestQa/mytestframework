@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/MultiItem_Add_to_bag.feature", glue = {
 		"com.automaiton.acceptance.steps", "com.automation.base.component" }, format = { "pretty",
-				"html:target/cucumber-reports", "json:target/cucumber-reports/cucumber.json" }, tags = { "@completed" })
+				"html:target/cucumber-reports", "json:target/cucumber-reports/cucumber.json" }, tags = { "@complete" })
 public class MultiItem_AddToBagTest {
 
 }

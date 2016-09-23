@@ -70,5 +70,4 @@ public class NavigationStepDef extends BaseGeneric {
 		select.selectByVisibleText(value);
 
 	}
-
 }

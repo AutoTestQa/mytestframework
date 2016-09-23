@@ -1,5 +1,5 @@
-@completed
-Feature: Item Add to bag
+@complete
+Feature: Multiple Items Add to bag
 
   Scenario Outline: 001 - Item Add to bag
     Given I Navigate to customer application
@@ -15,4 +15,4 @@ Feature: Item Add to bag
     Examples: 
       | product |
       | t-shirt |
-      | pents   |
+      | t-shirt |
