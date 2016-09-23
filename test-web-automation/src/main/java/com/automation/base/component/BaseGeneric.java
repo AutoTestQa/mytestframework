@@ -17,7 +17,7 @@ public class BaseGeneric {
 	public static Properties CONFIG = null;
 	public static Properties OR = null;
 	//static String driverPath = "D:\\Ravi\\chromedriver\\";
-	static String driverPath = "src\\test\\resources\\utilities\\tools\\";
+	static String driverPath = "src/test/resources/utilities/tools.";
 
 	private void setDriver(String browserType) {
 	    
