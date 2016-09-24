@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/", glue = { "com.automaiton.acceptance.steps",
 		"com.automation.base.component" }, format = { "pretty", "html:target/cucumber-reports",
-				"json:target/cucumber-reports/cucumber.json" }, tags = { "@completed" })
+				"json:target/cucumber-reports/cucumber.json" }, tags = { "@complete" })
 public class AllTest {
 
 }
