@@ -2,6 +2,8 @@ package com.automaiton.acceptance.steps;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.automation.base.component.BaseGeneric;
@@ -40,12 +42,26 @@ public class NavigationStepDef extends BaseGeneric {
 	public void I_click_on_choosedElement(String element) {
 		element = element.replace("\"", "");
 		try {
-			locatorFind.getWebelement(driver, element).click();
+		    locatorFind.getWebelement(driver, element).click();
 		} catch (Exception e) {
 			System.out
 					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
 		}
 	}
+	
+	
+	@When("^I choose to Doubleclick on (.*)$")
+    public void I_Doubleclick_on_choosedElement(String element) {
+        element = element.replace("\"", "");
+        try {
+            Actions action = new Actions(driver);
+            WebElement element2=locatorFind.getWebelement(driver, element);
+            action.doubleClick(element2).perform();
+        } catch (Exception e) {
+            System.out
+                    .println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
+        }
+    }
 
 	@Given("^I Choose to select \"([^\"]*)\" CheckBox$")
 	public void i_Choose_to_select_CheckBox(String element) throws Throwable {
