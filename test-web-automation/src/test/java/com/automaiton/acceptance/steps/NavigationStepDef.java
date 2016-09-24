@@ -44,7 +44,7 @@ public class NavigationStepDef extends BaseGeneric {
 		} catch (Exception e) {
 			System.out
 					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
-			// Assert.assertFalse(true);
+			//Assert.assertFalse(true);
 		}
 	}
 
@@ -65,9 +65,7 @@ public class NavigationStepDef extends BaseGeneric {
 	public void i_choose_to_select_as_a_Visible_Text_from_dropdown(String value, String element) throws Throwable {
 		element = element.replace("\"", "");
 		value = value.replace("\"", "");
-
 		Select select = new Select(locatorFind.getWebelement(driver, element));
 		select.selectByVisibleText(value);
-
 	}
 }
