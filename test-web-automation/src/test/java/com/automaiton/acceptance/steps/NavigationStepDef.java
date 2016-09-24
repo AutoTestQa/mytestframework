@@ -44,7 +44,6 @@ public class NavigationStepDef extends BaseGeneric {
 		} catch (Exception e) {
 			System.out
 					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
-			//Assert.assertFalse(true);
 		}
 	}
 
