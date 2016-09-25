@@ -13,6 +13,7 @@ public class Hook extends BaseGeneric {
 	public void invokeApplication() throws InterruptedException, IOException {
 
 		initializeTestBaseSetup();
+		
 	}
 
 	@After

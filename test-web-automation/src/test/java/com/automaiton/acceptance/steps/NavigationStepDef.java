@@ -2,9 +2,9 @@ package com.automaiton.acceptance.steps;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebElement;
+import org.junit.Rule;
+import org.junit.rules.ErrorCollector;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 import com.automation.base.component.BaseGeneric;
 import com.automation.base.component.LocatorFind;
@@ -18,18 +18,26 @@ public class NavigationStepDef extends BaseGeneric {
 
 	public NavigationStepDef(LocatorFind locatorFind) {
 		this.locatorFind = locatorFind;
-
 	}
+	
+	@Rule
+    public ErrorCollector collector= new ErrorCollector();
+	
+	Actions action = new Actions(driver);
+	
 
 	/**
 	 * Navigate application URL on selected browser/Device Application URL and
 	 * Browser
 	 */
-
 	@Given("^I Navigate to customer application$")
 	public void i_Navigate_to_customer_application() throws InterruptedException, IOException {
-		driver.get(CONFIG.getProperty("appURL"));
-		driver.manage().deleteAllCookies();
+	    try{
+	        driver.get(CONFIG.getProperty("appURL"));
+	        driver.manage().deleteAllCookies();
+	    }catch (NullPointerException  e){
+	        collector.addError(e);
+	    }
 	}
 
 	@Given("^I wait for (.*) seconds$")
@@ -40,47 +48,27 @@ public class NavigationStepDef extends BaseGeneric {
 
 	@When("^I choose to click on (.*)$")
 	public void I_click_on_choosedElement(String element) {
-		element = element.replace("\"", "");
+	    element=formatInput(element);  
 		try {
 		    locatorFind.getWebelement(driver, element).click();
-		} catch (Exception e) {
+		} catch (NullPointerException  e) {
 			System.out
-					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
+					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  ");
+			collector.addError(e);
 		}
+		
 	}
 	
 	
 	@When("^I choose to Doubleclick on (.*)$")
     public void I_Doubleclick_on_choosedElement(String element) {
-        element = element.replace("\"", "");
+	    element=formatInput(element);
         try {
-            Actions action = new Actions(driver);
-            WebElement element2=locatorFind.getWebelement(driver, element);
-            action.doubleClick(element2).perform();
-        } catch (Exception e) {
+            action.doubleClick(locatorFind.getWebelement(driver, element)).perform();
+        } catch (NullPointerException  e) {
             System.out
-                    .println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
+                    .println("Object " + "'" + element + "'" + " not exit/avaialble on application  ");
+            collector.addError(e);
         }
     }
-
-	@Given("^I Choose to select \"([^\"]*)\" CheckBox$")
-	public void i_Choose_to_select_CheckBox(String element) throws Throwable {
-		element = element.replace("\"", "");
-		try {
-			locatorFind.getWebelement(driver, element).click();
-		} catch (Exception e) {
-			System.out
-					.println("Object " + "'" + element + "'" + " not exit/avaialble on application  " + e.getMessage());
-			e.printStackTrace();
-		}
-
-	}
-
-	@Given("^I choose to select \"([^\"]*)\" as a Visible Text from \"([^\"]*)\" dropdown$")
-	public void i_choose_to_select_as_a_Visible_Text_from_dropdown(String value, String element) throws Throwable {
-		element = element.replace("\"", "");
-		value = value.replace("\"", "");
-		Select select = new Select(locatorFind.getWebelement(driver, element));
-		select.selectByVisibleText(value);
-	}
 }

@@ -37,7 +37,7 @@ public class LocatorFind {
 		return locator;
 	}
 
-	public static WebElement getWebelement(WebDriver driver, String key) {
+	public WebElement getWebelement(WebDriver driver, String key) {
 
 		String locator = getLocator(key);
 		WebElement element = null;

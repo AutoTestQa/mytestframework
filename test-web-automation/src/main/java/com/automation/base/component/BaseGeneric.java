@@ -84,5 +84,11 @@ public class BaseGeneric {
 		setDriver(CONFIG.getProperty("browserType"));
 
 	}
+	
+	public static String formatInput(String inputString){
+	    inputString = inputString.replace("\"", "");
+	    return inputString;
+	}
+	
 
 }
